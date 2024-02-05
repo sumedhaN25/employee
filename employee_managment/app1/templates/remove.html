@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove Employees</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container-fluid">
+        <h1>List of Employees</h1>
+        <hr>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for employee in emp %}
+                    <tr>
+                        <th scope="row">{{ employee.id }}</th>
+                        <td>{{ employee.First_name }}</td>
+                        <td>{{ employee.Last_name }}</td>
+                        <td>
+                            <a href="/remove_emp/{{ employee.id }}" class="btn btn-danger">Remove</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha384-ZvpUoIxFY3AH9C/pW1s5fZc/8a9d+I5NU3DeM2Q8r4YjqBq4QFq9ROuLGTtWI5i6" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-rhHoG2bWqPAA1Spqn1LdYxPIKXvgIVmFjz5l6U5aVZ9QcPBb/KBmYS1NqFvVpUJf" crossorigin="anonymous"></script>
+</body>
+</html>
